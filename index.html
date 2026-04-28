@@ -3,61 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINE公式アカウントへ移動します</title>
+    <title>LINEへ移動中...</title>
+    <meta http-equiv="refresh" content="1;url=https://lin.ee/WLSYnOe">
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
             text-align: center;
             padding: 50px 20px;
             background-color: #f9f9f9;
             color: #333;
         }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #06C755;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         .btn-line {
-            display: block;
-            background-color: #06C755; /* LINEのブランドカラー */
+            display: inline-block;
+            background-color: #06C755;
             color: #ffffff;
             font-weight: bold;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 16px 30px;
             border-radius: 8px;
             font-size: 18px;
-            margin-top: 20px;
+            margin-top: 30px;
             box-shadow: 0 4px 6px rgba(6, 199, 85, 0.2);
-            transition: background-color 0.3s;
-        }
-        .btn-line:active {
-            background-color: #05b34c;
-        }
-        .notice {
-            margin-top: 24px;
-            font-size: 13px;
-            color: #d9534f;
-            text-align: left;
-            background: #fdf2f2;
-            padding: 12px;
-            border-radius: 6px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>ご登録ありがとうございます</h2>
-        <p>以下のボタンをタップして<br>LINEアプリを開いてください。</p>
-        
-        <a href="https://lin.ee/WLSYnOe" class="btn-line">LINEを開く / 友だち追加</a>
 
-        <div class="notice">
-            <strong>※うまく画面が切り替わらない場合※</strong><br>
-            右上の「･･･」アイコンをタップし、<strong>「ブラウザで開く（Safari/Chrome）」</strong>を選択してから、再度ボタンを押してください。
-        </div>
-    </div>
+    <div class="loader"></div>
+    <h3>LINEへ移動しています...</h3>
+    <p style="font-size: 14px; color: #666;">
+        自動で切り替わらない場合は<br>下のボタンをタップしてください。
+    </p>
+
+    <a href="https://lin.ee/WLSYnOe" class="btn-line">LINEを開く</a>
+
+    <script>
+        // ページ読み込みから0.5秒後に自動でLINEのURLへ遷移させる処理
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "https://lin.ee/WLSYnOe";
+            }, 500);
+        };
+    </script>
+
 </body>
 </html>
