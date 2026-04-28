@@ -3,61 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINEへ移動中...</title>
-    <meta http-equiv="refresh" content="1;url=https://lin.ee/WLSYnOe">
+    <title>LINEアプリを開く手順</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
             text-align: center;
-            padding: 50px 20px;
-            background-color: #f9f9f9;
+            padding: 10px 20px;
+            background-color: #f4f5f7;
             color: #333;
+            margin: 0;
         }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #06C755;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px auto;
+        /* 右上を指す矢印のアニメーション */
+        .header-arrow {
+            text-align: right;
+            padding: 10px 10px 0 0;
+            color: #e53935;
+            font-size: 20px;
+            font-weight: bold;
+            animation: bounce 0.8s infinite alternate;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes bounce {
+            from { transform: translateY(0) translateX(0); }
+            to { transform: translateY(-8px) translateX(8px); }
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            margin: 10px auto 30px;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .warning-title {
+            color: #d32f2f;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffebee;
+            padding-bottom: 10px;
+        }
+        .step-box {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+            background: #fff9c4; /* 注意を引く薄い黄色 */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #fff59d;
+        }
+        .step-box strong {
+            color: #d32f2f;
+            font-size: 18px;
         }
         .btn-line {
-            display: inline-block;
+            display: block;
             background-color: #06C755;
             color: #ffffff;
             font-weight: bold;
             text-decoration: none;
-            padding: 16px 30px;
+            padding: 18px 20px;
             border-radius: 8px;
             font-size: 18px;
-            margin-top: 30px;
             box-shadow: 0 4px 6px rgba(6, 199, 85, 0.2);
+            width: 85%;
+            margin: 0 auto;
+        }
+        .notice {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <div class="loader"></div>
-    <h3>LINEへ移動しています...</h3>
-    <p style="font-size: 14px; color: #666;">
-        自動で切り替わらない場合は<br>下のボタンをタップしてください。
-    </p>
+    <div class="header-arrow">
+        右上をタップ ↗↗↗
+    </div>
 
-    <a href="https://lin.ee/WLSYnOe" class="btn-line">LINEを開く</a>
+    <div class="card">
+        <div class="warning-title">
+            ⚠️ このままでは<br>LINEが開けません
+        </div>
+        
+        <div class="step-box">
+            TikTokの制限により、現在の画面からはLINEを追加することができません。<br><br>
+            <strong>【解決手順】</strong><br>
+            1. 画面右上の <strong>「･･･」</strong> アイコンをタップ<br>
+            2. <strong>「ブラウザで開く」</strong> を選択<br>
+            3. 画面が切り替わったら、下のボタンを押してください。
+        </div>
 
-    <script>
-        // ページ読み込みから0.5秒後に自動でLINEのURLへ遷移させる処理
-        window.onload = function() {
-            setTimeout(function() {
-                window.location.href = "https://lin.ee/WLSYnOe";
-            }, 500);
-        };
-    </script>
+        <a href="https://lin.ee/WLSYnOe" class="btn-line">LINEを開く</a>
+        
+        <div class="notice">
+            ※SafariやChromeで開くと正常に起動します。
+        </div>
+    </div>
 
 </body>
 </html>
